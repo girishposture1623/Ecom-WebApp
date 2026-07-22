@@ -6,7 +6,7 @@ Shoplix is a modern full-stack e-commerce web application built using the MERN S
 
 ## 🚀 Live Demo
 
-🔗 https://YOUR_RENDER_URL.onrender.com
+🔗 https://YOUR_RENDER_URL.onrender.com](https://shoplix-9uxf.onrender.com
 
 ---
 
