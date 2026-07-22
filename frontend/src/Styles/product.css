@@ -1,134 +1,252 @@
-/* Hero Banner */
+/* ==========================================
+   GLOBAL
+========================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0f0f0f;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ==========================================
+   HERO BANNER
+========================================== */
+
 .hero-banner {
-  background: radial-gradient(circle at top right, rgba(249, 115, 22, 0.2), transparent 60%), linear-gradient(135deg, #18181b 0%, #09090b 100%);
-  color: white;
-  padding: 100px 30px;
+  background: linear-gradient(135deg, #111111, #1a1a1a);
+  border: 1px solid #2a2a2a;
+  border-radius: 20px;
+  padding: 90px 30px;
   text-align: center;
-  border-radius: 16px;
   margin-bottom: 50px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-  border: 1px solid rgba(255,255,255,0.05);
   position: relative;
   overflow: hidden;
+}
+
+.hero-banner::before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: rgba(249, 115, 22, 0.08);
+  border-radius: 50%;
+  top: -180px;
+  right: -120px;
 }
 
 .hero-banner h1 {
   font-size: 3.5rem;
   margin-bottom: 20px;
-  text-shadow: 0 4px 20px rgba(0,0,0,0.8);
-}
-
-.hero-banner p {
-  font-size: 1.2rem;
-  color: #d4d4d8;
-}
-
-/* Grid & Cards */
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 30px;
-  margin-top: 30px;
-}
-
-.product-card {
-  background: #18181b;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  border: 1px solid rgba(255,255,255,0.03);
-  display: flex;
-  flex-direction: column;
+  color: #fff;
   position: relative;
 }
 
-.product-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.5), 0 0 0 1px rgba(249, 115, 22, 0.3);
+.hero-banner p {
+  color: #b4b4b4;
+  font-size: 18px;
+  position: relative;
 }
+
+/* ==========================================
+   SEARCH BAR
+========================================== */
+
+.search-bar {
+  width: 100%;
+  max-width: 550px;
+  display: block;
+  margin: 0 auto 40px;
+  padding: 15px 20px;
+  border-radius: 10px;
+  border: 1px solid #2a2a2a;
+  background: #18181b;
+  color: white;
+  outline: none;
+  font-size: 16px;
+}
+
+.search-bar:focus {
+  border-color: #f97316;
+}
+
+/* ==========================================
+   PRODUCT GRID
+========================================== */
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+/* ==========================================
+   PRODUCT CARD
+========================================== */
+
+.product-card {
+  background: #18181b;
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #2a2a2a;
+  transition: 0.35s;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, .45);
+}
+
+/* ==========================================
+   WISHLIST ICON
+========================================== */
+
+.card-heart {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: .3s;
+  z-index: 5;
+}
+
+.card-heart svg {
+  color: #ef4444;
+  font-size: 20px;
+}
+
+.card-heart:hover {
+  background: #ef4444;
+}
+
+.card-heart:hover svg {
+  color: white;
+}
+
+/* ==========================================
+   IMAGE
+========================================== */
 
 .product-image {
   width: 100%;
-  height: 240px;
-  object-fit: cover;
-  transition: transform 0.5s ease;
+  height: 260px;
+  object-fit: contain;
+  background: white;
+  padding: 20px;
+  transition: .4s;
 }
 
 .product-card:hover .product-image {
   transform: scale(1.05);
 }
 
+/* ==========================================
+   INFO
+========================================== */
+
 .product-info {
   padding: 20px;
-  text-align: left;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background: linear-gradient(to top, #18181b 80%, transparent);
-  position: relative;
-  z-index: 2;
 }
 
 .product-info h3 {
-  font-size: 1.1rem;
-  margin-bottom: 10px;
-  color: #fff;
+  color: white;
+  font-size: 18px;
+  margin-bottom: 12px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.price {
-  font-size: 22px;
-  font-weight: 700;
-  color: #f97316;
+/* ==========================================
+   RATING
+========================================== */
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #facc15;
   margin-bottom: 15px;
+  font-size: 15px;
 }
 
-/* Search Bar */
-.search-bar {
+.star {
+  fill: #facc15;
+}
+
+/* ==========================================
+   PRICE
+========================================== */
+
+.price {
+  color: #f97316;
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* ==========================================
+   BUTTON
+========================================== */
+
+.btn {
   width: 100%;
-  max-width: 500px;
-  padding: 15px 20px;
-  margin-bottom: 30px;
-  background: #18181b;
-  border: 1px solid #27272a;
-  border-radius: 8px;
-  color: #fafafa;
-  font-size: 16px;
-  transition: all 0.3s ease;
-  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  padding: 14px;
+  border-radius: 10px;
+  background: #f97316;
+  color: white;
+  font-weight: 600;
+  transition: .3s;
 }
 
-.search-bar:focus {
-  border-color: #f97316;
-  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+.btn:hover {
+  background: #ea580c;
+  transform: translateY(-2px);
 }
 
-/* Detail Page */
+/* ==========================================
+   PRODUCT DETAIL
+========================================== */
+
 .product-detail {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   gap: 50px;
+  flex-wrap: wrap;
   background: #18181b;
-  padding: 40px;
-  border-radius: 16px;
-  border: 1px solid #27272a;
+  border-radius: 18px;
+  border: 1px solid #2a2a2a;
+  padding: 35px;
 }
 
 .detail-image {
   width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  object-fit: cover;
+  max-width: 500px;
+  border-radius: 15px;
+  background: white;
+  padding: 20px;
+  object-fit: contain;
 }
 
 .detail-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex: 1;
 }
 
 .detail-info h2 {
@@ -137,21 +255,111 @@
 }
 
 .detail-price {
-  font-size: 2rem;
   color: #f97316;
-  font-weight: 700;
-  margin-bottom: 25px;
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
 
 .detail-info p {
-  color: #a1a1aa;
-  line-height: 1.7;
-  font-size: 1.1rem;
-  margin-bottom: 30px;
+  color: #b4b4b4;
+  line-height: 1.8;
 }
 
-@media (max-width: 900px) {
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 992px) {
+
+  .hero-banner h1 {
+    font-size: 2.8rem;
+  }
+
   .product-detail {
+    flex-direction: column;
+  }
+
+  .detail-image {
+    max-width: 100%;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .hero-banner {
+    padding: 70px 20px;
+  }
+
+  .hero-banner h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-banner p {
+    font-size: 16px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .product-image {
+    height: 220px;
+  }
+
+  .detail-info h2 {
+    font-size: 2rem;
+  }
+
+}
+
+@media (max-width: 576px) {
+
+  .hero-banner {
+    padding: 60px 15px;
+  }
+
+  .hero-banner h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-banner p {
+    font-size: 15px;
+  }
+
+  .product-grid {
     grid-template-columns: 1fr;
   }
+
+  .product-image {
+    height: 200px;
+    padding: 15px;
+  }
+
+  .product-info {
+    padding: 15px;
+  }
+
+  .product-info h3 {
+    font-size: 16px;
+  }
+
+  .price {
+    font-size: 22px;
+  }
+
+  .btn {
+    padding: 12px;
+    font-size: 15px;
+  }
+
+  .detail-info h2 {
+    font-size: 1.6rem;
+  }
+
+  .detail-price {
+    font-size: 1.5rem;
+  }
+
 }

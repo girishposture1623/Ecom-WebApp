@@ -1,194 +1,219 @@
-/* ==========================
+/* ===========================
    NAVBAR
-========================== */
+=========================== */
 
 .navbar {
   width: 100%;
+  height: 80px;
   background: #18181b;
-  color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 7%;
+  padding: 0 7%;
   position: sticky;
   top: 0;
   z-index: 1000;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  box-shadow: 0 5px 20px rgba(0,0,0,.35);
 }
 
-/* ==========================
+/* ===========================
    LOGO
-========================== */
+=========================== */
 
-.navbar-brand a {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-  color: #f97316;
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 1;
+.navbar-brand a{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  color:#f97316;
+  font-size:30px;
+  font-weight:700;
 }
 
-.nav-logo {
-  width: 70px;
-  height: 70px;
-   position: relative;
-  top: 6px;
+.nav-logo{
+  width:55px;
+  height:55px;
+  object-fit:contain;
 }
-/* ==========================
+
+/* ===========================
    LINKS
-========================== */
+=========================== */
 
-.navbar-links {
-  display: flex;
-  align-items: center;
-  gap: 22px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.navbar-links{
+  display:flex;
+  align-items:center;
+  gap:22px;
+  list-style:none;
 }
 
-.navbar-links li {
-  display: flex;
-  align-items: center;
+.navbar-links li{
+  display:flex;
+  align-items:center;
 }
 
-.navbar-links a {
-  text-decoration: none;
-  color: #f5f5f5;
-  font-size: 1rem;
-  font-weight: 500;
-  transition: 0.3s ease;
+.navbar-links a{
+  color:#fff;
+  text-decoration:none;
+  font-size:16px;
+  display:flex;
+  align-items:center;
+  gap:7px;
+  transition:.3s;
 }
 
-.navbar-links a:hover {
-  color: #f97316;
+.navbar-links a:hover{
+  color:#f97316;
 }
 
-/* ==========================
+/* ===========================
    WISHLIST
-========================== */
+=========================== */
 
-.wishlist-link {
-  position: relative;
-  display: flex;
-  align-items: center;
+.wishlist-link{
+  position:relative;
 }
 
-.wishlist-icon {
-  font-size: 1.5rem;
+.wishlist-count{
+  position:absolute;
+  top:-8px;
+  right:-10px;
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  background:red;
+  color:#fff;
+  font-size:10px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-weight:bold;
 }
 
-.wishlist-count {
-  position: absolute;
-  top: -8px;
-  right: -10px;
-  width: 18px;
-  height: 18px;
-  background: #ef4444;
-  color: white;
-  border-radius: 50%;
-  font-size: 11px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
+/* ===========================
+   BUTTON
+=========================== */
+
+.btn-logout{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  border:none;
+  outline:none;
+  background:#f97316;
+  color:white;
+  padding:10px 18px;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:15px;
+  transition:.3s;
 }
 
-/* ==========================
-   CART
-========================== */
-
-.cart-link {
-  font-weight: 600;
+.btn-logout:hover{
+  background:#ea580c;
 }
 
-/* ==========================
-   LOGOUT BUTTON
-========================== */
+/* ===========================
+   HAMBURGER
+=========================== */
 
-.btn-logout {
-  padding: 8px 16px;
-  background: #f97316;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: 0.3s;
+.menu-btn{
+  display:none;
+  background:none;
+  border:none;
+  color:white;
+  cursor:pointer;
+  font-size:34px;
 }
 
-.btn-logout:hover {
-  background: #ea580c;
-  transform: translateY(-2px);
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:768px){
+
+.menu-btn{
+  display:block;
 }
 
-/* ==========================
-   ACTIVE LINK
-========================== */
-
-.navbar-links a.active {
-  color: #f97316;
+.navbar{
+  padding:0 20px;
+  height:70px;
 }
 
-/* ==========================
-   RESPONSIVE
-========================== */
-
-@media (max-width: 768px) {
-  .navbar {
-    padding: 15px 20px;
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .navbar-brand a {
-    font-size: 1.6rem;
-  }
-
-  .navbar-links {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 18px;
-  }
-
-  .navbar-links a {
-    font-size: 0.95rem;
-  }
-
-  .btn-logout {
-    padding: 8px 14px;
-  }
+.navbar-brand a{
+  font-size:24px;
 }
 
-@media (max-width: 480px) {
-  .navbar-brand a {
-    font-size: 1.4rem;
-  }
+.nav-logo{
+  width:45px;
+  height:45px;
+}
 
-  .nav-logo {
-    width: 38px;
-    height: 38px;
-  }
+.navbar-links{
+  position:fixed;
+  top:70px;
+  right:-100%;
+  width:270px;
+  height:calc(100vh - 70px);
+  background:#18181b;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:0;
+  padding:25px;
+  transition:.35s ease;
+  box-shadow:-5px 0 15px rgba(0,0,0,.35);
+}
 
-  .wishlist-icon {
-    font-size: 1.3rem;
-  }
+.navbar-links.active{
+  right:0;
+}
 
-  .wishlist-count {
-    width: 16px;
-    height: 16px;
-    font-size: 10px;
-  }
+.navbar-links li{
+  width:100%;
+}
 
-  .navbar-links {
-    gap: 12px;
-  }
+.navbar-links a{
+  width:100%;
+  padding:15px 0;
+  border-bottom:1px solid rgba(255,255,255,.08);
+  font-size:17px;
+}
 
-  .navbar-links a {
-    font-size: 0.9rem;
-  }
+.btn-logout{
+  width:100%;
+  justify-content:center;
+  margin-top:20px;
+}
+
+}
+
+/* ===========================
+   SMALL MOBILE
+=========================== */
+
+@media(max-width:480px){
+
+.navbar{
+  padding:0 15px;
+}
+
+.navbar-brand a{
+  font-size:21px;
+}
+
+.nav-logo{
+  width:40px;
+  height:40px;
+}
+
+.menu-btn{
+  font-size:30px;
+}
+
+.navbar-links{
+  width:100%;
+}
+
 }

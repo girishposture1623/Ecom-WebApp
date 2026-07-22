@@ -1,0 +1,160 @@
+/* =========================
+   HOME
+========================= */
+
+.home-container {
+  min-height: 100vh;
+  background: #0f0f0f;
+  color: #fff;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  background: linear-gradient(135deg, #111111, #1a1a1a);
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.hero-content {
+  max-width: 700px;
+  margin: auto;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 8px 18px;
+  background: rgba(249, 115, 22, 0.15);
+  color: #f97316;
+  border: 1px solid rgba(249, 115, 22, 0.4);
+  border-radius: 50px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 3.2rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: #cfcfcf;
+  line-height: 1.8;
+  margin-bottom: 35px;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.hero-buttons{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    margin-top:30px;
+    flex-wrap:wrap;
+}
+
+.shop-btn,
+.explore-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:56px;
+    margin-top: 1rem;
+    padding:0 40px;
+    border-radius:10px;
+    font-weight:600;
+    font-size:16px;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.shop-btn{
+    flex:1;
+    background:#f97316;
+    color:#fff;
+}
+
+.shop-btn:hover{
+    background:#ea580c;
+    transform:translateY(-3px);
+}
+
+.explore-btn{
+    min-width:140px;
+    border:2px solid #f97316;
+    color:#f97316;
+    background:transparent;
+}
+
+.explore-btn:hover{
+    background:#f97316;
+    color:#fff;
+    transform:translateY(-3px);
+}
+
+.featured {
+  padding: 70px 7%;
+  background: #0f0f0f;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.section-title h2 {
+  color: white;
+  font-size: 2.2rem;
+}
+
+.section-title p {
+  color: #9ca3af;
+  margin-top: 10px;
+}
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 70px 20px;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .featured {
+    padding: 40px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .shop-btn,
+  .explore-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

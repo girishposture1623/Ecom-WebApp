@@ -1,0 +1,173 @@
+/* ===========================
+   SHOP PAGE
+=========================== */
+
+.shop-container {
+  max-width: 1400px;
+  margin: auto;
+  padding: 40px 20px;
+  min-height: 100vh;
+  background: #0f0f0f;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+.shop-header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.shop-title {
+  color: #fff;
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.shop-subtitle {
+  color: #9ca3af;
+  font-size: 18px;
+}
+
+/* ===========================
+   SEARCH
+=========================== */
+
+.search-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.search-bar {
+  width: 100%;
+  max-width: 600px;
+  padding: 16px 22px;
+  border-radius: 12px;
+  border: 1px solid #2a2a2a;
+  background: #18181b;
+  color: white;
+  font-size: 16px;
+  outline: none;
+  transition: .3s;
+}
+
+.search-bar::placeholder {
+  color: #888;
+}
+
+.search-bar:focus {
+  border-color: #f97316;
+  box-shadow: 0 0 12px rgba(249,115,22,.25);
+}
+
+/* ===========================
+   PRODUCT COUNT
+=========================== */
+
+.product-count {
+  color: #9ca3af;
+  margin-bottom: 25px;
+  font-size: 15px;
+}
+
+/* ===========================
+   PRODUCT GRID
+=========================== */
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px,1fr));
+  gap: 28px;
+}
+
+/* ===========================
+   LOADING
+=========================== */
+
+.loading {
+  text-align: center;
+  color: #f97316;
+  font-size: 22px;
+  padding: 70px;
+}
+
+/* ===========================
+   EMPTY STATE
+=========================== */
+
+.no-products {
+  text-align: center;
+  padding: 70px 20px;
+}
+
+.no-products h2 {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.no-products p {
+  color: #9ca3af;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width:992px){
+
+.shop-title{
+    font-size:2.5rem;
+}
+
+.product-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media (max-width:768px){
+
+.shop-container{
+    padding:30px 15px;
+}
+
+.shop-title{
+    font-size:2rem;
+}
+
+.shop-subtitle{
+    font-size:15px;
+}
+
+.product-grid{
+    grid-template-columns:1fr;
+}
+
+.search-bar{
+    font-size:15px;
+    padding:14px 18px;
+}
+
+}
+
+@media (max-width:480px){
+
+.shop-title{
+    font-size:1.7rem;
+}
+
+.shop-subtitle{
+    font-size:14px;
+}
+
+.search-bar{
+    padding:12px 15px;
+}
+
+.loading{
+    font-size:18px;
+}
+
+}

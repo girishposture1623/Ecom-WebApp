@@ -1,0 +1,309 @@
+/* ==========================
+   ADMIN PRODUCTS
+========================== */
+
+.ap-container {
+  max-width: 1400px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #18181b;
+  border: 1px solid #2a2a2a;
+  border-radius: 16px;
+  color: #fff;
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+.ap-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.ap-header h1 {
+  font-size: 2rem;
+  color: #f97316;
+  margin-bottom: 8px;
+}
+
+.ap-header p {
+  color: #9ca3af;
+}
+
+.ap-add-btn {
+  background: #f97316;
+  color: white;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: .3s;
+}
+
+.ap-add-btn:hover {
+  background: #ea580c;
+  transform: translateY(-2px);
+}
+
+/* ==========================
+   SEARCH
+========================== */
+
+.ap-search-box {
+  margin-bottom: 20px;
+}
+
+.ap-search {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1px solid #333;
+  border-radius: 10px;
+  background: #111827;
+  color: white;
+  outline: none;
+  font-size: 16px;
+  transition: .3s;
+}
+
+.ap-search::placeholder {
+  color: #888;
+}
+
+.ap-search:focus {
+  border-color: #f97316;
+  box-shadow: 0 0 8px rgba(249,115,22,.35);
+}
+
+/* ==========================
+   PRODUCT COUNT
+========================== */
+
+.ap-total {
+  margin-bottom: 20px;
+  color: #9ca3af;
+  font-size: 15px;
+}
+
+/* ==========================
+   TABLE
+========================== */
+
+.ap-table-wrapper {
+  overflow-x: auto;
+  border-radius: 12px;
+}
+
+.ap-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 900px;
+}
+
+.ap-table thead {
+  background: #27272a;
+}
+
+.ap-table th {
+  padding: 16px;
+  text-align: left;
+  color: white;
+  border-bottom: 2px solid #f97316;
+}
+
+.ap-table td {
+  padding: 16px;
+  border-bottom: 1px solid #2f2f2f;
+  vertical-align: middle;
+}
+
+.ap-table tbody tr {
+  transition: .3s;
+}
+
+.ap-table tbody tr:hover {
+  background: #222;
+}
+
+/* ==========================
+   IMAGE
+========================== */
+
+.ap-image {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  background: white;
+  padding: 6px;
+  border-radius: 10px;
+}
+
+/* ==========================
+   STOCK
+========================== */
+
+.ap-stock {
+  padding: 6px 12px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.ap-in-stock {
+  background: rgba(34,197,94,.15);
+  color: #22c55e;
+}
+
+.ap-out-stock {
+  background: rgba(239,68,68,.15);
+  color: #ef4444;
+}
+
+/* ==========================
+   ACTION BUTTONS
+========================== */
+
+.ap-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.ap-edit-btn,
+.ap-delete-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.ap-edit-btn {
+  background: #2563eb;
+  color: white;
+}
+
+.ap-edit-btn:hover {
+  background: #1d4ed8;
+}
+
+.ap-delete-btn {
+  background: #dc2626;
+  color: white;
+  border: none;
+}
+
+.ap-delete-btn:hover {
+  background: #b91c1c;
+}
+
+/* ==========================
+   EMPTY
+========================== */
+
+.ap-empty {
+  text-align: center;
+  padding: 40px;
+  color: #9ca3af;
+}
+
+/* ==========================
+   SCROLLBAR
+========================== */
+
+.ap-table-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.ap-table-wrapper::-webkit-scrollbar-thumb {
+  background: #f97316;
+  border-radius: 20px;
+}
+
+.ap-table-wrapper::-webkit-scrollbar-track {
+  background: #222;
+}
+
+/* ==========================
+   TABLET
+========================== */
+
+@media (max-width:992px){
+
+  .ap-container{
+    padding:20px;
+  }
+
+  .ap-header{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .ap-add-btn{
+    width:100%;
+    text-align:center;
+  }
+
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media(max-width:768px){
+
+  .ap-container{
+    margin:20px 10px;
+    padding:15px;
+  }
+
+  .ap-header h1{
+    font-size:1.6rem;
+  }
+
+  .ap-header p{
+    font-size:14px;
+  }
+
+  .ap-search{
+    font-size:15px;
+  }
+
+  .ap-image{
+    width:55px;
+    height:55px;
+  }
+
+  .ap-edit-btn,
+  .ap-delete-btn{
+    flex:1;
+    text-align:center;
+  }
+
+}
+
+/* ==========================
+   SMALL MOBILE
+========================== */
+
+@media(max-width:480px){
+
+  .ap-container{
+    padding:12px;
+  }
+
+  .ap-header h1{
+    font-size:1.3rem;
+  }
+
+  .ap-search{
+    font-size:14px;
+    padding:12px;
+  }
+
+}
