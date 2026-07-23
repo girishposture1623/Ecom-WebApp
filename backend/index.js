@@ -12,7 +12,9 @@ import paymentRoute from "./routes/payment.Route.js";
 import analyticsRoute from "./routes/analytics.js";
 
 dotenv.config();
-
+console.log("EMAIL_USER:", process.env.EMAIL_USER);
+console.log("EMAIL_PASS:", process.env.EMAIL_PASS ? "Loaded" : "Missing");
+console.log("FRONTEND_URL:", process.env.FRONTEND_URL);
 // Connect Database
 connectDB();
 
