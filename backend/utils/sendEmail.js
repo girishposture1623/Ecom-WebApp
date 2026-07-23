@@ -20,5 +20,26 @@ transporter.verify((err) => {
     console.log("SMTP READY");
   }
 });
+const sendEmail = async ({ to, subject, text, html }) => {
+  try {
+    const mailOptions = {
+      from: `"Shoplix" <girishposture253@gmail.com>`, // Verified Sender Email
+      to,
+      subject,
+      text,
+      html,
+    };
 
-export default transporter;
+    const info = await transporter.sendMail(mailOptions);
+
+    console.log("✅ Email Sent:", info.messageId);
+
+    return info;
+  } catch (error) {
+    console.error("❌ Error Sending Email:", error);
+    throw error;
+  }
+};
+
+
+export default {transporter, sendEmail};
