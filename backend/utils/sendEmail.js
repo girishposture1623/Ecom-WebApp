@@ -4,34 +4,29 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
+  host: "smtp-relay.brevo.com",
   port: 587,
-  secure: false, // TLS
-  requireTLS: true,
+  secure: false,
 
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
   },
-
-  connectionTimeout: 30000,
-  greetingTimeout: 30000,
-  socketTimeout: 30000,
 });
 
-// Verify SMTP connection when server starts
-transporter.verify((error, success) => {
+// Verify SMTP connection
+transporter.verify((error) => {
   if (error) {
     console.error("❌ SMTP Verify Error:", error);
   } else {
-    console.log("✅ SMTP Server Ready");
+    console.log("✅ Brevo SMTP Connected");
   }
 });
 
 const sendEmail = async ({ to, subject, text, html }) => {
   try {
     const mailOptions = {
-      from: `"Shoplix" <${process.env.EMAIL_USER}>`,
+      from: `"Shoplix" <girishposture253@gmail.com>`, // Verified Sender Email
       to,
       subject,
       text,
