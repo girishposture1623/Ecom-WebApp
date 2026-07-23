@@ -3,27 +3,38 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
+console.log("EMAIL_USER:", process.env.EMAIL_USER);
+console.log(
+  "EMAIL_PASS:",
+  process.env.EMAIL_PASS ? "Loaded" : "Missing"
+);
+
 const transporter = nodemailer.createTransport({
   host: "smtp-relay.brevo.com",
-  port:  587,
+  port: 587,
   secure: false,
+  requireTLS: true,
+
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
   },
+
+  connectionTimeout: 30000,
+  greetingTimeout: 30000,
+  socketTimeout: 30000,
 });
 
-transporter.verify((err) => {
-  if (err) {
-    console.error("VERIFY ERROR:", err);
-  } else {
-    console.log("SMTP READY");
-  }
-});
 const sendEmail = async ({ to, subject, text, html }) => {
   try {
+    console.log("📧 Sending Email...");
+
+    // Verify SMTP Connection
+    await transporter.verify();
+    console.log("✅ SMTP READY");
+
     const mailOptions = {
-      from: `"Shoplix" <girishposture253@gmail.com>`, // Verified Sender Email
+      from: `"Shoplix" <girishposture253@gmail.com>`,
       to,
       subject,
       text,
@@ -36,10 +47,14 @@ const sendEmail = async ({ to, subject, text, html }) => {
 
     return info;
   } catch (error) {
-    console.error("❌ Error Sending Email:", error);
+    console.error("❌ EMAIL ERROR");
+    console.error("Code:", error.code);
+    console.error("Command:", error.command);
+    console.error("Message:", error.message);
+    console.error(error);
+
     throw error;
   }
 };
-
 
 export default sendEmail;
