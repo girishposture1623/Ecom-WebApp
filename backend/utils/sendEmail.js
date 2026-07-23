@@ -42,4 +42,4 @@ const sendEmail = async ({ to, subject, text, html }) => {
 };
 
 
-export default {transporter, sendEmail};
+export default sendEmail;
