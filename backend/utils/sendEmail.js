@@ -16,7 +16,7 @@ console.log("========================");
 // ✅ CORRECTED TRANSPORTER CONFIG
 const transporter = nodemailer.createTransport({
   host: "smtp-relay.brevo.com",
-  port: 587,
+  port: 2525,
   secure: false,
   requireTLS: true, // ← ADD THIS (required for Render)
   auth: {
